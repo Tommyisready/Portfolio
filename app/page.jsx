@@ -13,13 +13,13 @@ const Home = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Front-end Developer</span>
+            <span className="text-xl">Concepteur | Développeur</span>
             <h1 className="h1 mb-6">
-              Hello I'm <br />
+              Bonjour, je suis <br />
               <span className="text-cyan-400">Thomas Perrot</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              Apprenant en développement front-end : toujours en train de débugger mes erreurs... mais avec style ! Explorez mes projets où j'apprends, code et parfois même réussis à tout faire
+              Apprenant concepteur et developpeur d'appli : toujours en train de débugger mes erreurs... mais avec style ! Explorez mes projets où j'apprends, code et parfois même réussis à tout faire
               fonctionner.
             </p>
             {/* button and social */}

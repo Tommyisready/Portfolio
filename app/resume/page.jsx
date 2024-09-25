@@ -1,12 +1,12 @@
 "use client";
 
-import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs } from "react-icons/fa";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs, FaPhp } from "react-icons/fa";
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 
 // about data
 const about = {
-  title: "About Me",
-  description: "Nouveau dans le monde du code je m'essaye a plusieurs projets certains reussissent d'autres pas mais cela me permet d'apprendre de mes erreurs et de m'améliorer",
+  title: "Informations",
+  description: "Nouveau dans le monde du code je m'essaye a plusieurs projets certains reussissent d'autres pas mais cela me permet d'apprendre de mes erreurs et de m'améliorer en continu",
   info: [
     {
       fieldName: "Name",
@@ -25,7 +25,7 @@ const about = {
       fieldValue: "Français",
     },
     {
-      fieldName: "Alternance",
+      fieldName: "Contrat Pro",
       fieldValue: "Disponible",
     },
     {
@@ -131,8 +131,8 @@ const skills = {
       name: "Next.js",
     },
     {
-      icon: <FaFigma />,
-      name: "Figma",
+      icon: <FaPhp />,
+      name: "Php",
     },
   ],
 };

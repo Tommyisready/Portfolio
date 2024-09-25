@@ -17,7 +17,7 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "frontend",
+    category: "Frontend",
     title: "project 1",
     description: "Site responsive de référencement SEO.",
     stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
@@ -27,9 +27,9 @@ const projects = [
   },
   {
     num: "02",
-    category: "fullstack",
+    category: "Frontend",
     title: "project 2",
-    description: "Site e-commerce pour des figurines peintes warhammer 40K.",
+    description: "Page d'accueil Saas",
     stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
     image: "/assets/work/thumb2.png",
     live: "",
@@ -39,8 +39,8 @@ const projects = [
     num: "03",
     category: "frontend",
     title: "project 3",
-    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Cupidate magnam modi.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "React.js" }],
+    description: "Page d'acceuil dashboard",
+    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
     image: "/assets/work/thumb3.png",
     live: "",
     github: "",

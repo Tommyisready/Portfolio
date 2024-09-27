@@ -36,34 +36,34 @@ const Contact = () => {
           {/* form */}
           <div className="xl:w-[54%] order-2 xl:order-none ">
             <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl ">
-              <h3 className="text-4xl text-cyan-400">Let's go work together</h3>
-              <p className="text-white/60">Lorem ipsum dolor sit amet consectetur adipiscing elit. Cupidate magnam modi.</p>
+              <h3 className="text-4xl text-cyan-400">Travaillons ensemble</h3>
+              <p className="text-white/60"></p>
               {/*input*/}
               <div className="grid grid-col-1 md:grid-col-2 gap-6">
-                <Input type="firstname" placeholder="Firstname" />
-                <Input type="lastname" placeholder="Lastname" />
-                <Input type="email" placeholder="Email adress" />
-                <Input type="phone" placeholder="Phone number" />
+                <Input type="firstname" placeholder="Prénom" />
+                <Input type="lastname" placeholder="Nom" />
+                <Input type="email" placeholder="Adresse Email" />
+                <Input type="phone" placeholder="Téléphone" />
               </div>
               {/*select*/}
               <Select>
                 <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a service" />
+                  <SelectValue placeholder="Choisis ton besoin" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="est">Web Development</SelectItem>
+                    <SelectLabel>Choisis ton besoin</SelectLabel>
+                    <SelectItem value="est">Développement Web</SelectItem>
                     <SelectItem value="cst">Logo Design</SelectItem>
-                    <SelectItem value="mst">Call To Define Your Needs</SelectItem>
+                    <SelectItem value="mst">Echange pour définir ton besoin</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
               {/*textarea*/}
-              <Textarea className="h-[200px]" placeholder="Type your message here." />
+              <Textarea className="h-[200px]" placeholder="Tape ton message ici." />
               {/*btn*/}
               <Button size="md" className="max-w-40 h-[50px]">
-                Send message
+                Envoyer
               </Button>
             </form>
           </div>

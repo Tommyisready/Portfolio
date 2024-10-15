@@ -20,20 +20,20 @@ const projects = [
     category: "Frontend",
     title: "project 1",
     description: "Site responsive de recette de cuisine.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
+    stack: [{ name: "Html 5" }, { name: "Css 3" }],
     image: "/assets/work/projet1.png",
-    live: "",
-    github: "",
+    live: "https://julietteandmecooking.vercel.app/",
+    github: "https://github.com/Tommyisready/site_responsive",
   },
   {
     num: "02",
     category: "frontend",
     title: "project 2",
-    description: "Page d'acceuil dashboard",
+    description: "Site de référencement SEO",
     stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
     image: "/assets/work/projet2.png",
-    live: "",
-    github: "",
+    live: "https://seo-website-pied.vercel.app/",
+    github: "https://github.com/Tommyisready/SEO-Website",
   },
   {
     num: "03",
@@ -42,18 +42,18 @@ const projects = [
     description: "Page d'accueil responsive d'un Saas",
     stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
     image: "/assets/work/projet3.png",
-    live: "",
-    github: "",
+    live: "https://focus-ivory.vercel.app/",
+    github: "https://github.com/Tommyisready/focus",
   },
   {
     num: "04",
     category: "fullstack",
     title: "project 4",
-    description: "Site de vente de vélo",
+    description: "Site de vente de vélo (en cours)",
     stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Sanity CM" }, { name: "Stripe" }],
     image: "/assets/work/projet4.png",
     live: "",
-    github: "",
+    github: "https://github.com/Tommyisready/fullstack_project",
   },
 ];
 
@@ -95,7 +95,7 @@ const Work = () => {
               {/*button*/}
               <div className="flex items-center gap-4">
                 {/*live project button */}
-                <Link href={project.live}>
+                <Link href={project.live} target="_blank" rel="noopener noreferrer">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group ">

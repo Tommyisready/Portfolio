@@ -25,9 +25,10 @@ const Home = () => {
             {/* button and social */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
-                <a href="public/cv-thomas-perrot.pdf" download></a>
-                <span>Télécharger CV</span>
-                <FiDownload className="text-xl" />
+                <a href="public/cv-thomas-perrot.pdf" download>
+                  <span>Télécharger CV</span>
+                  <FiDownload className="text-xl" />
+                </a>
               </Button>
               <div className="mb-8 xl:mb-0">
                 <Social

@@ -6,7 +6,7 @@ import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 // about data
 const about = {
   title: "Informations",
-  description: "Nouveau dans le monde du code je m'essaye a plusieurs projets certains reussissent d'autres pas mais cela me permet d'apprendre de mes erreurs et de m'améliorer en continu",
+  description: "Informations",
   info: [
     {
       fieldName: "Name",
@@ -26,7 +26,7 @@ const about = {
     },
     {
       fieldName: "Contrat Pro",
-      fieldValue: "Disponible",
+      fieldValue: "A partir 15 Février",
     },
     {
       fieldName: "Email",
@@ -43,7 +43,7 @@ const about = {
 const expériences = {
   icon: "/assets/resume/badge.svg",
   title: "Mon expérience",
-  description: "Voici les projets de groupe que j'ai pu mener et qui m'on accordé de l'expérience",
+  description: "Voici les projets de groupe que j'ai menés, et qui m'ont permis d'acquérir de l'expérience.",
   items: [
     {
       company: "Ada Tech School",
@@ -71,7 +71,7 @@ const expériences = {
 const diplôme = {
   icon: "/assets/resume/cap.svg",
   title: "Mes diplômes",
-  description: "Un bref résumé de ce qui fait de moi ce que je suis aujourd'hui",
+  description: "Mes anciens diplômes et ceux en cours",
   items: [
     {
       école: "Ada Tech School",
@@ -99,7 +99,7 @@ const diplôme = {
 // skills data
 const skills = {
   title: "Mes compétences",
-  description: "Voici les languages que je pratique et explore au quotidien, ma maitrise est loin d'être parfaite pourtant cela ne m'empeche pas d'apprendre chaque jour",
+  description: "J'explore plusieurs langages au cours de ma formation. Même si ma maîtrise est encore loin d'être parfaite, cela ne m'empêche pas d'apprendre et de progresser chaque jour.",
   skillList: [
     {
       icon: <FaHtml5 />,

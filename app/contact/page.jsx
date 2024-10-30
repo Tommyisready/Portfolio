@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import React, { useReducer } from "react";
-import emailjs from "emailjs/browser";
+import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 
 // Information de contact

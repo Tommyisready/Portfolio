@@ -63,12 +63,25 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    emailjs.send("service_tt0jck4", "template_49oelf7", formData, "oKxJWCwVbNcYNFucJ").then(
+    // Construire un objet emailData avec les champs nécessaires
+    const emailData = {
+      from_name: `${formData.firstname} ${formData.lastname}`, // Combinez le prénom et le nom
+      reply_to: formData.email, // Utilisez l'email comme adresse de réponse
+      message: formData.message, // Le message du formulaire
+      phone: formData.phone, // Numéro de téléphone si nécessaire
+      besoin: formData.besoin,
+    };
+
+    // Pour le débogage, vous pouvez loguer l'objet emailData
+    console.log("Données envoyées :", emailData);
+
+    // Envoyer l'email
+    emailjs.send("service_tt0jck4", "template_49oelf7", emailData, "oKxJWCwVbNcYNFucJ").then(
       (result) => {
         alert("Message envoyé avec succès !");
       },
       (error) => {
+        console.error("Erreur lors de l'envoi :", error); // Affichez l'erreur dans la console pour le débogage
         alert("Une erreur est survenue, merci de réessayer.");
       }
     );

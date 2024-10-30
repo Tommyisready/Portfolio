@@ -28,6 +28,9 @@ const info = [
   },
 ];
 
+// SCOPES pour l'API Gmail
+const SCOPES = ["https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/userinfo.profile", "https://www.googleapis.com/auth/gmail.send"];
+
 // État initial et reducer pour la gestion du formulaire
 const initialState = {
   firstname: "",
@@ -64,7 +67,7 @@ const Contact = () => {
           apiKey: "AIzaSyAVDBBeqWtMwGY9KWKuGxWcvkKdETXB1Uo", // Remplacez par votre clé API
           clientId: "916715621088-rrr9tvvuln2nf0uvgq4ubamhmq3opu8e.apps.googleusercontent.com", // Remplacez par votre ID client
           discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest"],
-          scope: "https://www.googleapis.com/auth/gmail.send",
+          scope: SCOPES.join(" "), // Utilisez les SCOPES ici
         })
         .then(() => {
           console.log("Gmail API Initialized");

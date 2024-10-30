@@ -107,15 +107,28 @@ const Contact = () => {
     console.log("Données envoyées :", emailData);
 
     // Envoyer l'email
-    emailjs.send("service_tt0jck4", "template_49oelf7", emailData, "oKxJWCwVbNcYNFucJ").then(
-      (result) => {
-        alert("Message envoyé avec succès !");
-      },
-      (error) => {
-        console.error("Erreur lors de l'envoi :", error); // Affichez l'erreur dans la console pour le débogage
-        alert("Une erreur est survenue, merci de réessayer.");
-      }
-    );
+    try {
+      const response = await window.gapi.client.gmail.users.messages.send({
+        userId: "me",
+        resource: {
+          raw: btoa(
+            `From: ${formData.firstname} <${formData.email}>\n` +
+              `To: t.perrot44@gmail.com\n` + // Changez cela pour l'adresse où vous souhaitez envoyer l'e-mail
+              `Subject: Nouveau message de ${formData.firstname}\n\n` +
+              `${formData.message}`
+          )
+            .replace(/\+/g, "-")
+            .replace(/\//g, "_")
+            .replace(/=+$/, ""),
+        },
+      });
+
+      console.log("Message sent: ", response);
+      alert("Message envoyé avec succès !");
+    } catch (error) {
+      console.error("Erreur lors de l'envoi :", error);
+      alert("Une erreur est survenue, merci de réessayer.");
+    }
   };
 
   return (

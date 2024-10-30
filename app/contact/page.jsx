@@ -5,11 +5,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 
-// Information de contact
+// Informations de contact
 const info = [
   {
     icon: <FaPhoneAlt />,
@@ -53,6 +53,31 @@ const reducer = (state, action) => {
 const Contact = () => {
   const [formData, dispatch] = useReducer(reducer, initialState);
 
+  useEffect(() => {
+    const handleClientLoad = () => {
+      window.gapi.load("client:auth2", initClient);
+    };
+
+    const initClient = () => {
+      window.gapi.client
+        .init({
+          apiKey: "AIzaSyAVDBBeqWtMwGY9KWKuGxWcvkKdETXB1Uo", // Remplacez par votre clé API
+          clientId: "916715621088-rrr9tvvuln2nf0uvgq4ubamhmq3opu8e.apps.googleusercontent.com", // Remplacez par votre ID client
+          discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest"],
+          scope: "https://www.googleapis.com/auth/gmail.send",
+        })
+        .then(() => {
+          console.log("Gmail API Initialized");
+        });
+    };
+
+    // Charger la bibliothèque gapi
+    const script = document.createElement("script");
+    script.src = "https://apis.google.com/js/api.js";
+    script.onload = handleClientLoad;
+    document.body.appendChild(script);
+  }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     dispatch({ type: "SET_FIELD", field: name, value });
@@ -62,7 +87,13 @@ const Contact = () => {
     dispatch({ type: "SET_FIELD", field: "besoin", value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prévenir le rechargement de la page
+
+    // Authentifier l'utilisateur
+    const authInstance = window.gapi.auth2.getAuthInstance();
+    await authInstance.signIn();
+
     // Construire un objet emailData avec les champs nécessaires
     const emailData = {
       from_name: `${formData.firstname} ${formData.lastname}`, // Combinez le prénom et le nom

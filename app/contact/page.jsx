@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import emailjs from "emailjs-com";
 
 const info = [
   {
@@ -29,6 +30,41 @@ const info = [
 import { motion } from "framer-motion";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    message: "",
+    besoin: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSelectChange = (value) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      besoin: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs.send("service_tt0jck4", "template_49oelf7", formData, "oKxJWCwVbNcYNFucJ").then(
+      (result) => {
+        alert("Message envoyé avec succès !");
+      },
+      (error) => {
+        alert("Une erreur est survenue, merci de réessayer.");
+      }
+    );
+  };
   return (
     <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeIn" } }} className="py-6">
       <div className="container mx-auto">
